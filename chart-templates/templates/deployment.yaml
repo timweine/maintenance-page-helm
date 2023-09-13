@@ -15,12 +15,19 @@ spec:
       labels:
         app: maintenance-page
     spec:
+      volumes:
+        - name: static-files
+          configMap:
+            name: {{ .Release.Name }}-config
       containers:
         - name: nginx
-          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          image: nginx:{{ .Values.image.tag }}
           ports:
             - name: http
               containerPort: 80
+          volumeMounts:
+            - name: static-files
+              mountPath: /usr/share/nginx/html
           resources:
             requests:
               memory: "64Mi"
