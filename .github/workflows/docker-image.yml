@@ -14,3 +14,9 @@ jobs:
 
     - name: Build the Docker image
       run: docker buildx build -t weinek/maintenance-page --file maintenance-page/Dockerfile ./maintenance-page/
+
+    - name: Log in to Docker Hub
+      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+
+    - name: Push Docker Image to Docker Hub
+      run: docker push weinek/maintenance-page
