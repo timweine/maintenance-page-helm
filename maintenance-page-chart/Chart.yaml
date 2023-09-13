@@ -1,0 +1,11 @@
+apiVersion: v2
+name: maintenance-page-chart
+description: Helm chart for displaying a maintence page
+type: application
+version: 0.1.0
+appVersion: "1.16.0"
+maintainers:
+- name: Tim Weinekötter
+  email: tim@appswithlove.com
+
+
