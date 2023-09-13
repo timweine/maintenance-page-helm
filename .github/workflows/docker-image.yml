@@ -12,11 +12,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Change directory to maintenance-page/
-      run: cd maintenance-page/
-
-    - name: list the directory
-      run: ls
-
     - name: Build the Docker image
-      run: docker build -t weinek/maintenance-page .
+      run: docker buildx build -t weinek/maintenance-page --file maintenance-page/Dockerfile ./maintenance-page/
