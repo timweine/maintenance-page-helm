@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: {{ .Release.Name }}-nginx-service-clusterip
   labels:
-    app: maintencance-page
+    app: maintenance-page
 spec:
   selector:
-    app: maintencance-page
+    app: maintenance-page
   ports:
     - protocol: TCP
       port: 80
@@ -20,10 +20,10 @@ kind: Service
 metadata:
   name: {{ .Release.Name }}-nginx-service-nodeport
   labels:
-    app: maintencance-page
+    app: maintenance-page
 spec:
   selector:
-    app: maintencance-page
+    app: maintenance-page
   ports:
     - protocol: TCP
       port: 80
